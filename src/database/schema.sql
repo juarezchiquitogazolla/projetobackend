@@ -1,3 +1,11 @@
+-- 1. Excluir banco (se existir)
+DROP DATABASE IF EXISTS db_cantina;
+
+-- 2. Criar banco
+CREATE DATABASE db_cantina;
+
+-- 3. Usar banco
+\c db_cantina;
 -- Tabela de Cozinheiras
 CREATE TABLE public.cozinheira_tb (
 	id_usuario INT NOT NULL,

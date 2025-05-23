@@ -59,8 +59,10 @@ EOF
 npx prisma init --datasource-provider postgresql --output ../generated/prisma
 
 sudo docker-compose -f docker-compose.dev.yml up -d --build
+docker exec -i postgres-dev psql -U postgres < src/database/schema.sql
 
-psql -h localhost -p 5433 -U postgres -f src/config/schema.sql
+
+
 
 echo "Configuração completa! tsconfig.json e tsconfig.build.json criados com sucesso."
 
