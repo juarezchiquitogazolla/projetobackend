@@ -60,7 +60,8 @@ npx prisma init --datasource-provider postgresql --output ../generated/prisma
 
 sudo docker-compose -f docker-compose.dev.yml up -d --build
 docker exec -i postgres-dev psql -U postgres < src/database/schema.sql
-
+ docker-compose exec app npx prisma db pull
+sudo docker-compose -f docker-compose.dev.yml exec api npx prisma db pull
 
 
 
